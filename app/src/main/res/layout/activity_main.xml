@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/BG_color"
+    tools:context=".MainActivity">
+
+
+
+
+
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="16dp"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginEnd="16dp"-->
+<!--        android:fontFamily="@font/arabic_arihna"-->
+<!--        android:text="@string/app_name"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="32sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/nestedScrollView"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/nestedScrollView"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="500dp"
+                android:layout_height="370dp"
+                android:src="@drawable/bg_top1"
+                app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <!--region Fitur Artikel-->
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp_artikel"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.68" />
+
+            <LinearLayout
+                android:id="@+id/ll_slider_dots"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="130dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vp_artikel" />
+
+            <!--endregion-->
+
+            <!--profile-->
+
+            <ImageView
+                android:id="@+id/profile"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/img_prof"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="33dp"
+                android:text="@string/user"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@+id/profile"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--end Profile-->
+
+
+            <!--region Fitur Dzikir & Doa-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="300dp"
+                android:background="@drawable/bg_dashboard_menu"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <!-- Sunnah Qauliyah Dzikir & Doa Shalat-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ll_dzikir_doa_shalat"
+                    android:layout_width="100dp"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="110dp"
+                    android:layout_marginEnd="250dp"
+                    android:background="@drawable/bg_item"
+                    android:padding="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginBottom="70dp"
+                        android:contentDescription="@string/content_txt_icon_qauliyah_shalat"
+                        android:src="@drawable/ic_kuuba"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="68dp"
+                        android:text="@string/txt_sunnah_qauliyah"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <!-- Dzikir Setiap Saat-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ll_dzikir_setiap_saat"
+                    android:layout_width="100dp"
+                    android:layout_height="160dp"
+                    android:layout_marginStart="150dp"
+                    android:layout_marginTop="110dp"
+                    android:layout_marginEnd="150dp"
+                    android:background="@drawable/bg_item"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginBottom="80dp"
+                        android:contentDescription="@string/content_txt_icon_dzikir_setiap_saat"
+                        android:src="@drawable/ic_clock"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="80dp"
+                        android:text="@string/txt_dzikir_setiap_saat"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <!--                    <TextView-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_gravity="center"-->
+                    <!--                        android:layout_marginStart="16dp"-->
+                    <!--                        android:text="@string/txt_dzikir_setiap_saat"-->
+                    <!--                        android:textColor="@color/blue"-->
+                    <!--                        android:textSize="18sp"-->
+                    <!--                        android:textStyle="bold" />-->
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <!-- Dzikir & Doa Harian-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ll_dzikir_doa_harian"
+                    android:layout_width="100dp"
+                    android:layout_height="160dp"
+                    android:layout_marginStart="250dp"
+                    android:layout_marginTop="110dp"
+                    android:background="@drawable/bg_item"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginBottom="80dp"
+                        android:contentDescription="@string/content_txt_icon_dzikir_doa_harian"
+                        android:src="@drawable/ic_doaharian"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="80dp"
+                        android:text="@string/txt_dzikir_doa_harian"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:layout_constraintDimensionRatio="w,1:1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!--                 Dzikir Pagi & Petang-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ll_dzikir_pagi"
+                    android:layout_width="100dp"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="290dp"
+                    android:layout_marginEnd="250dp"
+                    android:background="@drawable/bg_item"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginBottom="80dp"
+                        android:contentDescription="@string/content_txt_icon_dzikir_pagi_petang"
+                        android:src="@drawable/ic_tasbih"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="80dp"
+                        android:text="@string/txt_dzikir_pagi"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ll_dzikir_petang"
+                    android:layout_width="100dp"
+                    android:layout_height="160dp"
+                    android:layout_marginStart="150dp"
+                    android:layout_marginTop="290dp"
+                    android:layout_marginEnd="150dp"
+                    android:background="@drawable/bg_item"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginBottom="80dp"
+                        android:contentDescription="@string/content_txt_icon_dzikir_pagi_petang"
+                        android:src="@drawable/ic_tasbih"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="80dp"
+                        android:text="@string/txt_dzikir_petang"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ll_al_quran"
+                    android:layout_width="100dp"
+                    android:layout_height="160dp"
+                    android:layout_marginStart="250dp"
+                    android:layout_marginTop="290dp"
+                    android:background="@drawable/bg_item"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginBottom="80dp"
+                        android:contentDescription="@string/content_txt_icon_dzikir_pagi_petang"
+                        android:src="@drawable/ic_alquran"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="80dp"
+                        android:text="@string/txt_alquran"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/lala"
+                    android:layout_width="100dp"
+                    android:layout_height="160dp"
+                    android:layout_marginStart="150dp"
+                    android:layout_marginTop="500dp"
+                    android:layout_marginEnd="150dp"
+                    android:background="@drawable/bg_item"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <!--                </LinearLayout>-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--endregion-->
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="85dp"
+                android:fontFamily="@font/fruits_delight"
+                android:text="@string/app_name"
+                android:textColor="@color/BG_color"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/constraintLayout" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
